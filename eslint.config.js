@@ -1,4 +1,4 @@
-import { defineConfig } from '@soybeanjs/eslint-config';
+import { defineConfig } from '@openiamjs/eslint-config';
 
 export default defineConfig(
   { vue: true, unocss: true },

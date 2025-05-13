@@ -7,7 +7,7 @@ import {
   generateRoute,
   gitCommit,
   gitCommitVerify,
-  printSoybean,
+  printOpeniam,
   release,
   updatePkg
 } from './commands';
@@ -22,7 +22,7 @@ type Command =
   | 'changelog'
   | 'release'
   | 'gen-route'
-  | 'print-soybean';
+  | 'print-openiam';
 
 type CommandAction<A extends object> = (args?: A) => Promise<void> | void;
 
@@ -54,7 +54,7 @@ interface CommandArg {
 export async function setupCli() {
   const cliOptions = await loadCliOptions();
 
-  const cli = cac(blue('soybean-admin'));
+  const cli = cac(blue('openiam-admin'));
 
   cli
     .version(lightGreen(version))
@@ -114,10 +114,10 @@ export async function setupCli() {
         await generateRoute();
       }
     },
-    'print-soybean': {
-      desc: 'print soybean',
+    'print-openiam': {
+      desc: 'print openiam',
       action: async () => {
-        await printSoybean();
+        await printOpeniam();
       }
     }
   };

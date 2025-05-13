@@ -1,25 +1,15 @@
 {
-  "name": "@sa/elp",
+  "name": "openiam",
   "type": "module",
-  "version": "1.3.12",
-  "description": "A fresh and elegant admin template, based on Vue3、Vite3、TypeScript、ElementPlus and UnoCSS. 一个基于Vue3、Vite3、TypeScript、ElementPlus and UnoCSS的清新优雅的中后台模版。",
+  "version": "1.0.0",
+  "description": "",
   "author": {
-    "name": "Soybean",
-    "email": "soybeanjs@outlook.com",
-    "url": "https://github.com/soybeanjs"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/soybeanjs/soybean-admin",
-  "repository": {
-    "url": "https://github.com/soybeanjs/soybean-admin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/soybeanjs/soybean-admin/issues"
+    "name": "Openiam"
   },
   "keywords": [
     "Vue3 admin ",
     "vue-admin-template",
-    "Vite5",
+    "Vite6",
     "TypeScript",
     "element-plus",
     "element-plus-admin",
@@ -39,7 +29,7 @@
     "dev:prod": "vite --mode prod",
     "gen-route": "sa gen-route",
     "lint": "eslint . --fix",
-    "postbuild": "sa print-soybean",
+    "postbuild": "sa print-openiam",
     "prepare": "simple-git-hooks",
     "preview": "vite preview",
     "release": "sa release",
@@ -95,9 +85,9 @@
     "@amap/amap-jsapi-types": "0.0.15",
     "@elegant-router/vue": "0.3.8",
     "@iconify/json": "2.2.314",
+    "@openiamjs/eslint-config": "1.6.0",
     "@sa/scripts": "workspace:*",
     "@sa/uno-preset": "workspace:*",
-    "@soybeanjs/eslint-config": "1.6.0",
     "@types/bmapgl": "0.0.7",
     "@types/dompurify": "3.2.0",
     "@types/node": "22.13.9",
@@ -134,6 +124,5 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
-  },
-  "website": "https://elp.soybeanjs.cn"
+  }
 }

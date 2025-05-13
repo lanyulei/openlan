@@ -18,7 +18,7 @@ interface FormModel {
 }
 
 const model = ref<FormModel>({
-  userName: 'Soybean',
+  userName: 'admin',
   password: '123456'
 });
 
@@ -95,6 +95,7 @@ async function handleAccountLogin(account: Account) {
       <ElButton type="primary" size="large" round block :loading="authStore.loginLoading" @click="handleSubmit">
         {{ $t('common.confirm') }}
       </ElButton>
+      <!--
       <div class="flex-y-center justify-between gap-12px">
         <ElButton class="flex-1" size="default" @click="toggleLoginModule('code-login')">
           {{ $t(loginModuleRecord['code-login']) }}
@@ -103,7 +104,9 @@ async function handleAccountLogin(account: Account) {
           {{ $t(loginModuleRecord.register) }}
         </ElButton>
       </div>
-      <ElDivider class="text-14px text-#666 !m-0">{{ $t('page.login.pwdLogin.otherAccountLogin') }}</ElDivider>
+       -->
+      <!-- <ElDivider class="text-14px text-#666 !m-0">{{ $t('page.login.pwdLogin.otherAccountLogin') }}</ElDivider> -->
+      <!--
       <div class="flex-center gap-12px">
         <ElButton
           v-for="item in accounts"
@@ -116,6 +119,7 @@ async function handleAccountLogin(account: Account) {
           {{ item.label }}
         </ElButton>
       </div>
+       -->
     </ElSpace>
   </ElForm>
 </template>

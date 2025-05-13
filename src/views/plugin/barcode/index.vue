@@ -5,7 +5,7 @@ import { onMounted } from 'vue';
 
 defineOptions({ name: 'BarcodePage' });
 
-const text = 'Soybean';
+const text = 'Openiam';
 
 interface CodeConfig {
   id: string;

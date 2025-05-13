@@ -32,7 +32,7 @@ const newses = computed<NewsItem[]>(() => [
     <ElTimeline>
       <ElTimelineItem v-for="item in newses" :key="item.id" :timestamp="item.time" placement="top">
         <ElSpace>
-          <SoybeanAvatar class="size-48px!" />
+          <OpeniamAvatar class="size-48px!" />
           <p>{{ item.content }}</p>
         </ElSpace>
       </ElTimelineItem>

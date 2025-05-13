@@ -6,8 +6,8 @@ defineOptions({ name: 'PrintPage' });
 function printTable() {
   printJS({
     printable: [
-      { name: 'soybean', wechat: 'honghuangdc', remark: '欢迎来技术交流' },
-      { name: 'soybean', wechat: 'honghuangdc', remark: '欢迎来技术交流' }
+      { name: 'openiam', wechat: 'honghuangdc', remark: '欢迎来技术交流' },
+      { name: 'openiam', wechat: 'honghuangdc', remark: '欢迎来技术交流' }
     ],
     properties: ['name', 'wechat', 'remark'],
     type: 'json'

@@ -89,4 +89,8 @@ const bgColor = computed(() => {
   </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+:deep(.el-card__body) {
+  padding: 30px 30px 40px;
+}
+</style>

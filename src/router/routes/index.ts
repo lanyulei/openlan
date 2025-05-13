@@ -6,7 +6,7 @@ import { transformElegantRoutesToVueRoutes } from '../elegant/transform';
 /**
  * custom routes
  *
- * @link https://github.com/soybeanjs/elegant-router?tab=readme-ov-file#custom-route
+ * @link https://github.com/openiamjs/elegant-router?tab=readme-ov-file#custom-route
  */
 const customRoutes: CustomRoute[] = [
   {
@@ -124,7 +124,7 @@ const customRoutes: CustomRoute[] = [
         path: '/document/project',
         component: 'view.iframe-page',
         props: {
-          url: 'https://docs.soybeanjs.cn/zh'
+          url: 'https://docs.openiamjs.cn/zh'
         },
         meta: {
           title: 'document_project',
@@ -142,7 +142,7 @@ const customRoutes: CustomRoute[] = [
           i18nKey: 'route.document_project-link',
           order: 2,
           localIcon: 'logo',
-          href: 'https://docs.soybeanjs.cn/zh'
+          href: 'https://docs.openiamjs.cn/zh'
         }
       },
       {
