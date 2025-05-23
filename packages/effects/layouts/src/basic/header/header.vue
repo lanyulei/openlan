@@ -6,7 +6,7 @@ import { RotateCw } from '@vben/icons';
 import { preferences, usePreferences } from '@vben/preferences';
 import { useAccessStore } from '@vben/stores';
 
-import { VbenFullScreen, VbenIconButton } from '@vben-core/shadcn-ui';
+import { OpenLanFullScreen, OpenLanIconButton } from '@vben-core/shadcn-ui';
 
 import {
   GlobalSearch,
@@ -119,9 +119,9 @@ function clearPreferencesAndLogout() {
   >
     <slot :name="slot.name">
       <template v-if="slot.name === 'refresh'">
-        <VbenIconButton class="my-0 mr-1 rounded-md" @click="refresh">
+        <OpenLanIconButton class="my-0 mr-1 rounded-md" @click="refresh">
           <RotateCw class="size-4" />
-        </VbenIconButton>
+        </OpenLanIconButton>
       </template>
     </slot>
   </template>
@@ -164,7 +164,7 @@ function clearPreferencesAndLogout() {
           <LanguageToggle class="mr-1" />
         </template>
         <template v-else-if="slot.name === 'fullscreen'">
-          <VbenFullScreen class="mr-1" />
+          <OpenLanFullScreen class="mr-1" />
         </template>
       </slot>
     </template>

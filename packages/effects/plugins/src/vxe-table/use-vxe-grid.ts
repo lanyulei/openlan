@@ -7,7 +7,7 @@ import { useStore } from '@vben-core/shared/store';
 import { VxeGridApi } from './api';
 import VxeGrid from './use-vxe-grid.vue';
 
-export function useVbenVxeGrid(options: VxeGridProps) {
+export function useOpenLanVxeGrid(options: VxeGridProps) {
   // const IS_REACTIVE = isReactive(options);
   const api = new VxeGridApi(options);
   const extendedApi: ExtendedVxeGridApi = api as ExtendedVxeGridApi;
@@ -24,7 +24,7 @@ export function useVbenVxeGrid(options: VxeGridProps) {
       return () => h(VxeGrid, { ...props, ...attrs, api: extendedApi }, slots);
     },
     {
-      name: 'VbenVxeGrid',
+      name: 'OpenLanVxeGrid',
       inheritAttrs: false,
     },
   );
@@ -42,4 +42,4 @@ export function useVbenVxeGrid(options: VxeGridProps) {
   return [Grid, extendedApi] as const;
 }
 
-export type UseVbenVxeGrid = typeof useVbenVxeGrid;
+export type UseOpenLanVxeGrid = typeof useOpenLanVxeGrid;

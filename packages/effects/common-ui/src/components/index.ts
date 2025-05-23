@@ -14,18 +14,18 @@ export * from '@vben-core/popup-ui';
 
 // 给文档用
 export {
-  VbenAvatar,
-  VbenButton,
-  VbenButtonGroup,
-  VbenCheckButtonGroup,
-  VbenCountToAnimator,
-  VbenFullScreen,
-  VbenInputPassword,
-  VbenLoading,
-  VbenLogo,
-  VbenPinInput,
-  VbenSpinner,
-  VbenTree,
+  OpenLanAvatar,
+  OpenLanButton,
+  OpenLanButtonGroup,
+  OpenLanCheckButtonGroup,
+  OpenLanCountToAnimator,
+  OpenLanFullScreen,
+  OpenLanInputPassword,
+  OpenLanLoading,
+  OpenLanLogo,
+  OpenLanPinInput,
+  OpenLanSpinner,
+  OpenLanTree,
 } from '@vben-core/shadcn-ui';
 
 export type { FlattenedItem } from '@vben-core/shadcn-ui';

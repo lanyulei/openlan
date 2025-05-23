@@ -2,7 +2,7 @@
 import { computed, toRaw, unref, watch } from 'vue';
 
 import { useSimpleLocale } from '@vben-core/composables';
-import { VbenExpandableArrow } from '@vben-core/shadcn-ui';
+import { OpenLanExpandableArrow } from '@vben-core/shadcn-ui';
 import { cn, isFunction, triggerWindowResize } from '@vben-core/shared/utils';
 
 import { COMPONENT_MAP } from '../config';
@@ -146,13 +146,13 @@ defineExpose({
     <!-- 展开按钮前 -->
     <slot name="expand-before"></slot>
 
-    <VbenExpandableArrow
+    <OpenLanExpandableArrow
       v-if="rootProps.showCollapseButton"
       v-model:model-value="collapsed"
       class="ml-2"
     >
       <span>{{ collapsed ? $t('expand') : $t('collapse') }}</span>
-    </VbenExpandableArrow>
+    </OpenLanExpandableArrow>
 
     <!-- 展开按钮后 -->
     <slot name="expand-after"></slot>

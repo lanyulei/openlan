@@ -6,8 +6,8 @@ import { $t, useI18n } from '@vben/locales';
 import { storeToRefs, useAccessStore } from '@vben/stores';
 
 import { useScrollLock } from '@vben-core/composables';
-import { useVbenForm, z } from '@vben-core/form-ui';
-import { VbenAvatar, VbenButton } from '@vben-core/shadcn-ui';
+import { useOpenLanForm, z } from '@vben-core/form-ui';
+import { OpenLanAvatar, OpenLanButton } from '@vben-core/shadcn-ui';
 
 import { useDateFormat, useNow } from '@vueuse/core';
 
@@ -37,7 +37,7 @@ const date = useDateFormat(now, 'YYYY-MM-DD dddd', { locales: locale.value });
 const showUnlockForm = ref(false);
 const { lockScreenPassword } = storeToRefs(accessStore);
 
-const [Form, { form, validate }] = useVbenForm(
+const [Form, { form, validate }] = useOpenLanForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -45,7 +45,7 @@ const [Form, { form, validate }] = useVbenForm(
     },
     schema: computed(() => [
       {
-        component: 'VbenInputPassword' as const,
+        component: 'OpenLanInputPassword' as const,
         componentProps: {
           placeholder: $t('ui.widgets.lockScreen.placeholder'),
         },
@@ -118,28 +118,28 @@ useScrollLock();
         @keydown.enter.prevent="handleSubmit"
       >
         <div class="flex-col-center mb-10 w-[300px]">
-          <VbenAvatar :src="avatar" class="enter-x mb-6 size-20" />
+          <OpenLanAvatar :src="avatar" class="enter-x mb-6 size-20" />
 
           <div class="enter-x mb-2 w-full items-center">
             <Form />
           </div>
-          <VbenButton class="enter-x w-full" @click="handleSubmit">
+          <OpenLanButton class="enter-x w-full" @click="handleSubmit">
             {{ $t('ui.widgets.lockScreen.entry') }}
-          </VbenButton>
-          <VbenButton
+          </OpenLanButton>
+          <OpenLanButton
             class="enter-x my-2 w-full"
             variant="ghost"
             @click="$emit('toLogin')"
           >
             {{ $t('ui.widgets.lockScreen.backToLogin') }}
-          </VbenButton>
-          <VbenButton
+          </OpenLanButton>
+          <OpenLanButton
             class="enter-x mr-2 w-full"
             variant="ghost"
             @click="toggleUnlockForm"
           >
             {{ $t('common.back') }}
-          </VbenButton>
+          </OpenLanButton>
         </div>
       </div>
     </transition>

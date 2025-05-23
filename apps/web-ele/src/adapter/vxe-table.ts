@@ -1,12 +1,12 @@
 import { h } from 'vue';
 
-import { setupVbenVxeTable, useVbenVxeGrid } from '@vben/plugins/vxe-table';
+import { setupOpenLanVxeTable, useOpenLanVxeGrid } from '@vben/plugins/vxe-table';
 
 import { ElButton, ElImage } from 'element-plus';
 
-import { useVbenForm } from './form';
+import { useOpenLanForm } from './form';
 
-setupVbenVxeTable({
+setupOpenLanVxeTable({
   configVxeTable: (vxeUI) => {
     vxeUI.setConfig({
       grid: {
@@ -60,9 +60,9 @@ setupVbenVxeTable({
     // 这里可以自行扩展 vxe-table 的全局配置，比如自定义格式化
     // vxeUI.formats.add
   },
-  useVbenForm,
+  useOpenLanForm,
 });
 
-export { useVbenVxeGrid };
+export { useOpenLanVxeGrid };
 
 export type * from '@vben/plugins/vxe-table';

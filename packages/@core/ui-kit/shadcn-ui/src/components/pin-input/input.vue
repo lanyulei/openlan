@@ -4,7 +4,7 @@ import type { PinInputProps } from './types';
 import { computed, onBeforeUnmount, ref, useId, watch } from 'vue';
 
 import { PinInput, PinInputGroup, PinInputInput } from '../../ui';
-import { VbenButton } from '../button';
+import { OpenLanButton } from '../button';
 
 defineOptions({
   inheritAttrs: false,
@@ -105,7 +105,7 @@ const id = useId();
           :index="index"
         />
       </PinInputGroup>
-      <VbenButton
+      <OpenLanButton
         :disabled="disabled"
         :loading="btnLoading"
         class="flex-grow"
@@ -114,7 +114,7 @@ const id = useId();
         @click="handleSend"
       >
         {{ btnText }}
-      </VbenButton>
+      </OpenLanButton>
     </div>
   </PinInput>
 </template>

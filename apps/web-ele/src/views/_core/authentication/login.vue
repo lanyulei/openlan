@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
+import type { OpenLanFormSchema } from '@vben/common-ui';
 import type { BasicOption } from '@vben/types';
 
 import { computed, markRaw } from 'vue';
@@ -16,7 +16,7 @@ const authStore = useAuthStore();
 const MOCK_USER_OPTIONS: BasicOption[] = [
   {
     label: 'Super',
-    value: 'vben',
+    value: 'openlan',
   },
   {
     label: 'Admin',
@@ -28,10 +28,10 @@ const MOCK_USER_OPTIONS: BasicOption[] = [
   },
 ];
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): OpenLanFormSchema[] => {
   return [
     {
-      component: 'VbenSelect',
+      component: 'OpenLanSelect',
       componentProps: {
         options: MOCK_USER_OPTIONS,
         placeholder: $t('authentication.selectAccount'),
@@ -42,10 +42,10 @@ const formSchema = computed((): VbenFormSchema[] => {
         .string()
         .min(1, { message: $t('authentication.selectAccount') })
         .optional()
-        .default('vben'),
+        .default('openlan'),
     },
     {
-      component: 'VbenInput',
+      component: 'OpenLanInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
       },
@@ -70,7 +70,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
     },
     {
-      component: 'VbenInputPassword',
+      component: 'OpenLanInputPassword',
       componentProps: {
         placeholder: $t('authentication.password'),
       },

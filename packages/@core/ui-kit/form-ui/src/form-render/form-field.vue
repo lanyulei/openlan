@@ -12,8 +12,8 @@ import {
   FormField,
   FormItem,
   FormMessage,
-  VbenRenderContent,
-  VbenTooltip,
+  OpenLanRenderContent,
+  OpenLanTooltip,
 } from '@vben-core/shadcn-ui';
 import { cn, isFunction, isObject, isString } from '@vben-core/shared/utils';
 
@@ -320,7 +320,7 @@ onUnmounted(() => {
         :style="labelStyle"
       >
         <template v-if="label">
-          <VbenRenderContent :content="label" />
+          <OpenLanRenderContent :content="label" />
         </template>
       </FormLabel>
       <div class="flex-auto overflow-hidden p-[1px]">
@@ -349,14 +349,14 @@ onUnmounted(() => {
                   :key="name"
                   #[name]="renderSlotProps"
                 >
-                  <VbenRenderContent
+                  <OpenLanRenderContent
                     :content="customContentRender[name]"
                     v-bind="{ ...renderSlotProps, formContext: slotProps }"
                   />
                 </template>
                 <!-- <slot></slot> -->
               </component>
-              <VbenTooltip
+              <OpenLanTooltip
                 v-if="compact && isInValid"
                 :delay-duration="300"
                 side="left"
@@ -373,15 +373,15 @@ onUnmounted(() => {
                   </slot>
                 </template>
                 <FormMessage />
-              </VbenTooltip>
+              </OpenLanTooltip>
             </slot>
           </FormControl>
           <!-- 自定义后缀 -->
           <div v-if="suffix" class="ml-1">
-            <VbenRenderContent :content="suffix" />
+            <OpenLanRenderContent :content="suffix" />
           </div>
           <FormDescription v-if="description" class="ml-1">
-            <VbenRenderContent :content="description" />
+            <OpenLanRenderContent :content="description" />
           </FormDescription>
         </div>
 

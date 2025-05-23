@@ -13,7 +13,7 @@ import {
 import { $t } from '@vben/locales';
 import { isWindowsOs } from '@vben/utils';
 
-import { useVbenModal } from '@vben-core/popup-ui';
+import { useOpenLanModal } from '@vben-core/popup-ui';
 
 import { useMagicKeys, whenever } from '@vueuse/core';
 
@@ -34,7 +34,7 @@ const props = withDefaults(
 const keyword = ref('');
 const searchInputRef = ref<HTMLInputElement>();
 
-const [Modal, modalApi] = useVbenModal({
+const [Modal, modalApi] = useOpenLanModal({
   onCancel() {
     modalApi.close();
   },

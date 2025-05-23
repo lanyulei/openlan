@@ -9,11 +9,11 @@ import type { Ref } from 'vue';
 
 import type { ClassType, DeepPartial } from '@vben/types';
 
-import type { VbenFormProps } from '@vben-core/form-ui';
+import type { OpenLanFormProps } from '@vben-core/form-ui';
 
 import type { VxeGridApi } from './api';
 
-import { useVbenForm } from '@vben-core/form-ui';
+import { useOpenLanForm } from '@vben-core/form-ui';
 
 export interface VxePaginationInfo {
   currentPage: number;
@@ -63,7 +63,7 @@ export interface VxeGridProps {
   /**
    * 表单配置
    */
-  formOptions?: VbenFormProps;
+  formOptions?: OpenLanFormProps;
   /**
    * 显示搜索表单
    */
@@ -82,5 +82,5 @@ export type ExtendedVxeGridApi = VxeGridApi & {
 
 export interface SetupVxeTable {
   configVxeTable: (ui: VxeUIExport) => void;
-  useVbenForm: typeof useVbenForm;
+  useOpenLanForm: typeof useOpenLanForm;
 }

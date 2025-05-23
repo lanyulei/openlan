@@ -1,3 +1,3 @@
-export { default as VbenPinInput } from './input.vue';
+export { default as OpenLanPinInput } from './input.vue';
 
 export type * from './types';

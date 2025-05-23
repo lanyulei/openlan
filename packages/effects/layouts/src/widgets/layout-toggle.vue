@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { AuthPageLayoutType } from '@vben/types';
 
-import type { VbenDropdownMenuItem } from '@vben-core/shadcn-ui';
+import type { OpenLanDropdownMenuItem } from '@vben-core/shadcn-ui';
 
 import { computed } from 'vue';
 
@@ -13,13 +13,13 @@ import {
   usePreferences,
 } from '@vben/preferences';
 
-import { VbenDropdownRadioMenu, VbenIconButton } from '@vben-core/shadcn-ui';
+import { OpenLanDropdownRadioMenu, OpenLanIconButton } from '@vben-core/shadcn-ui';
 
 defineOptions({
   name: 'AuthenticationLayoutToggle',
 });
 
-const menus = computed((): VbenDropdownMenuItem[] => [
+const menus = computed((): OpenLanDropdownMenuItem[] => [
   {
     icon: PanelLeft,
     label: $t('authentication.layout.alignLeft'),
@@ -50,15 +50,15 @@ function handleUpdate(value: string | undefined) {
 </script>
 
 <template>
-  <VbenDropdownRadioMenu
+  <OpenLanDropdownRadioMenu
     :menus="menus"
     :model-value="preferences.app.authPageLayout"
     @update:model-value="handleUpdate"
   >
-    <VbenIconButton>
+    <OpenLanIconButton>
       <PanelRight v-if="authPanelRight" class="size-4" />
       <PanelLeft v-if="authPanelLeft" class="size-4" />
       <InspectionPanel v-if="authPanelCenter" class="size-4" />
-    </VbenIconButton>
-  </VbenDropdownRadioMenu>
+    </OpenLanIconButton>
+  </OpenLanDropdownRadioMenu>
 </template>

@@ -32,9 +32,9 @@ async function bootstrap(namespace: string) {
   // 注册Element Plus提供的v-loading指令
   app.directive('loading', ElLoading.directive);
 
-  // 注册Vben提供的v-loading和v-spinning指令
+  // 注册OpenLan提供的v-loading和v-spinning指令
   registerLoadingDirective(app, {
-    loading: false, // Vben提供的v-loading指令和Element Plus提供的v-loading指令二选一即可，此处false表示不注册Vben提供的v-loading指令
+    loading: false, // OpenLan提供的v-loading指令和Element Plus提供的v-loading指令二选一即可，此处false表示不注册OpenLan提供的v-loading指令
     spinning: 'spinning',
   });
 

@@ -15,8 +15,8 @@ import {
 import { useAccessStore } from '@vben/stores';
 import { cloneDeep, mapTree } from '@vben/utils';
 
-import { VbenAdminLayout } from '@vben-core/layout-ui';
-import { VbenBackTop, VbenLogo } from '@vben-core/shadcn-ui';
+import { OpenLanAdminLayout } from '@vben-core/layout-ui';
+import { OpenLanBackTop, OpenLanLogo } from '@vben-core/shadcn-ui';
 
 import { Breadcrumb, CheckUpdates, Preferences } from '../widgets';
 import { LayoutContent, LayoutContentSpinner } from './content';
@@ -177,7 +177,7 @@ const headerSlots = computed(() => {
 </script>
 
 <template>
-  <VbenAdminLayout
+  <OpenLanAdminLayout
     v-model:sidebar-extra-visible="sidebarExtraVisible"
     :content-compact="preferences.app.contentCompact"
     :content-compact-width="preferences.app.contentCompactWidth"
@@ -232,7 +232,7 @@ const headerSlots = computed(() => {
   >
     <!-- logo -->
     <template #logo>
-      <VbenLogo
+      <OpenLanLogo
         v-if="preferences.logo.enable"
         :class="logoClass"
         :collapsed="logoCollapsed"
@@ -244,7 +244,7 @@ const headerSlots = computed(() => {
         <template v-if="$slots['logo-text']" #text>
           <slot name="logo-text"></slot>
         </template>
-      </VbenLogo>
+      </OpenLanLogo>
     </template>
     <!-- 头部区域 -->
     <template #header>
@@ -322,7 +322,7 @@ const headerSlots = computed(() => {
       />
     </template>
     <template #side-extra-title>
-      <VbenLogo
+      <OpenLanLogo
         v-if="preferences.logo.enable"
         :text="preferences.app.name"
         :theme="theme"
@@ -330,7 +330,7 @@ const headerSlots = computed(() => {
         <template v-if="$slots['logo-text']" #text>
           <slot name="logo-text"></slot>
         </template>
-      </VbenLogo>
+      </OpenLanLogo>
     </template>
 
     <template #tabbar>
@@ -377,7 +377,7 @@ const headerSlots = computed(() => {
           @clear-preferences-and-logout="clearPreferencesAndLogout"
         />
       </template>
-      <VbenBackTop />
+      <OpenLanBackTop />
     </template>
-  </VbenAdminLayout>
+  </OpenLanAdminLayout>
 </template>

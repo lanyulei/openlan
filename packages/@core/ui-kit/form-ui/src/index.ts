@@ -1,12 +1,12 @@
-export { setupVbenForm } from './config';
+export { setupOpenLanForm } from './config';
 
 export type {
   BaseFormComponentType,
   ExtendedFormApi,
-  VbenFormProps,
-  FormSchema as VbenFormSchema,
+  OpenLanFormProps,
+  FormSchema as OpenLanFormSchema,
 } from './types';
 
-export * from './use-vben-form';
-// export { default as VbenForm } from './vben-form.vue';
+export * from './use-openlan-form';
+// export { default as OpenLanForm } from './openlan-form.vue';
 export * as z from 'zod';

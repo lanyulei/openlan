@@ -3,8 +3,8 @@ import type { CustomRenderType } from '../types';
 
 import {
   FormLabel,
-  VbenHelpTooltip,
-  VbenRenderContent,
+  OpenLanHelpTooltip,
+  OpenLanRenderContent,
 } from '@vben-core/shadcn-ui';
 import { cn } from '@vben-core/shared/utils';
 
@@ -23,9 +23,9 @@ const props = defineProps<Props>();
   <FormLabel :class="cn('flex items-center', props.class)">
     <span v-if="required" class="text-destructive mr-[2px]">*</span>
     <slot></slot>
-    <VbenHelpTooltip v-if="help" trigger-class="size-3.5 ml-1">
-      <VbenRenderContent :content="help" />
-    </VbenHelpTooltip>
+    <OpenLanHelpTooltip v-if="help" trigger-class="size-3.5 ml-1">
+      <OpenLanRenderContent :content="help" />
+    </OpenLanHelpTooltip>
     <span v-if="colon && label" class="ml-[2px]">:</span>
   </FormLabel>
 </template>

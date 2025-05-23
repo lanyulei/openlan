@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { VbenFormSchema } from '@vben-core/form-ui';
+import type { OpenLanFormSchema } from '@vben-core/form-ui';
 
 import { computed, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 
 import { $t } from '@vben/locales';
 
-import { useVbenForm } from '@vben-core/form-ui';
-import { VbenButton } from '@vben-core/shadcn-ui';
+import { useOpenLanForm } from '@vben-core/form-ui';
+import { OpenLanButton } from '@vben-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 
 interface Props {
-  formSchema: VbenFormSchema[];
+  formSchema: OpenLanFormSchema[];
   /**
    * @zh_CN 是否处于加载处理状态
    */
@@ -51,7 +51,7 @@ const emit = defineEmits<{
   submit: [Record<string, any>];
 }>();
 
-const [Form, formApi] = useVbenForm(
+const [Form, formApi] = useOpenLanForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -96,7 +96,7 @@ defineExpose({
     <Form />
 
     <div>
-      <VbenButton
+      <OpenLanButton
         :class="{
           'cursor-wait': loading,
         }"
@@ -107,10 +107,10 @@ defineExpose({
         <slot name="submitButtonText">
           {{ submitButtonText || $t('authentication.sendResetLink') }}
         </slot>
-      </VbenButton>
-      <VbenButton class="mt-4 w-full" variant="outline" @click="goToLogin()">
+      </OpenLanButton>
+      <OpenLanButton class="mt-4 w-full" variant="outline" @click="goToLogin()">
         {{ $t('common.back') }}
-      </VbenButton>
+      </OpenLanButton>
     </div>
   </div>
 </template>

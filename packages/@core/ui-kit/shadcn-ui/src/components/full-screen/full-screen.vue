@@ -3,7 +3,7 @@ import { Maximize, Minimize } from '@vben-core/icons';
 
 import { useFullscreen } from '@vueuse/core';
 
-import { VbenIconButton } from '../button';
+import { OpenLanIconButton } from '../button';
 
 defineOptions({ name: 'FullScreen' });
 
@@ -21,8 +21,8 @@ isFullscreen.value = !!(
 );
 </script>
 <template>
-  <VbenIconButton @click="toggle">
+  <OpenLanIconButton @click="toggle">
     <Minimize v-if="isFullscreen" class="text-foreground size-4" />
     <Maximize v-else class="text-foreground size-4" />
-  </VbenIconButton>
+  </OpenLanIconButton>
 </template>

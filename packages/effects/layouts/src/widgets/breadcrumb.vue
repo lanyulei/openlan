@@ -8,7 +8,7 @@ import { useRoute, useRouter } from 'vue-router';
 
 import { $t } from '@vben/locales';
 
-import { VbenBreadcrumbView } from '@vben-core/shadcn-ui';
+import { OpenLanBreadcrumbView } from '@vben-core/shadcn-ui';
 
 interface Props {
   hideWhenOnlyOne?: boolean;
@@ -64,7 +64,7 @@ function handleSelect(path: string) {
 }
 </script>
 <template>
-  <VbenBreadcrumbView
+  <OpenLanBreadcrumbView
     :breadcrumbs="breadcrumbs"
     :show-icon="showIcon"
     :style-type="type"

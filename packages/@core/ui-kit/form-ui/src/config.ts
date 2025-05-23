@@ -3,18 +3,18 @@ import type { Component } from 'vue';
 import type {
   BaseFormComponentType,
   FormCommonConfig,
-  VbenFormAdapterOptions,
+  OpenLanFormAdapterOptions,
 } from './types';
 
 import { h } from 'vue';
 
 import {
-  VbenButton,
-  VbenCheckbox,
-  Input as VbenInput,
-  VbenInputPassword,
-  VbenPinInput,
-  VbenSelect,
+  OpenLanButton,
+  OpenLanCheckbox,
+  Input as OpenLanInput,
+  OpenLanInputPassword,
+  OpenLanPinInput,
+  OpenLanSelect,
 } from '@vben-core/shadcn-ui';
 import { globalShareState } from '@vben-core/shared/global-state';
 
@@ -25,24 +25,24 @@ const DEFAULT_MODEL_PROP_NAME = 'modelValue';
 export const DEFAULT_FORM_COMMON_CONFIG: FormCommonConfig = {};
 
 export const COMPONENT_MAP: Record<BaseFormComponentType, Component> = {
-  DefaultButton: h(VbenButton, { size: 'sm', variant: 'outline' }),
-  PrimaryButton: h(VbenButton, { size: 'sm', variant: 'default' }),
-  VbenCheckbox,
-  VbenInput,
-  VbenInputPassword,
-  VbenPinInput,
-  VbenSelect,
+  DefaultButton: h(OpenLanButton, { size: 'sm', variant: 'outline' }),
+  PrimaryButton: h(OpenLanButton, { size: 'sm', variant: 'default' }),
+  OpenLanCheckbox,
+  OpenLanInput,
+  OpenLanInputPassword,
+  OpenLanPinInput,
+  OpenLanSelect,
 };
 
 export const COMPONENT_BIND_EVENT_MAP: Partial<
   Record<BaseFormComponentType, string>
 > = {
-  VbenCheckbox: 'checked',
+  OpenLanCheckbox: 'checked',
 };
 
-export function setupVbenForm<
+export function setupOpenLanForm<
   T extends BaseFormComponentType = BaseFormComponentType,
->(options: VbenFormAdapterOptions<T>) {
+>(options: OpenLanFormAdapterOptions<T>) {
   const { config, defineRules } = options;
 
   const {

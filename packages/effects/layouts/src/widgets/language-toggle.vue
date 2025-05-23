@@ -6,7 +6,7 @@ import { Languages } from '@vben/icons';
 import { loadLocaleMessages } from '@vben/locales';
 import { preferences, updatePreferences } from '@vben/preferences';
 
-import { VbenDropdownRadioMenu, VbenIconButton } from '@vben-core/shadcn-ui';
+import { OpenLanDropdownRadioMenu, OpenLanIconButton } from '@vben-core/shadcn-ui';
 
 defineOptions({
   name: 'LanguageToggle',
@@ -26,14 +26,14 @@ async function handleUpdate(value: string | undefined) {
 
 <template>
   <div>
-    <VbenDropdownRadioMenu
+    <OpenLanDropdownRadioMenu
       :menus="SUPPORT_LANGUAGES"
       :model-value="preferences.app.locale"
       @update:model-value="handleUpdate"
     >
-      <VbenIconButton>
+      <OpenLanIconButton>
         <Languages class="text-foreground size-4" />
-      </VbenIconButton>
-    </VbenDropdownRadioMenu>
+      </OpenLanIconButton>
+    </OpenLanDropdownRadioMenu>
   </div>
 </template>

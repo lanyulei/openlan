@@ -3,7 +3,7 @@ import type { ZodTypeAny } from 'zod';
 
 import type { Component, HtmlHTMLAttributes, Ref } from 'vue';
 
-import type { VbenButtonProps } from '@vben-core/shadcn-ui';
+import type { OpenLanButtonProps } from '@vben-core/shadcn-ui';
 import type { ClassType, MaybeComputedRef } from '@vben-core/typings';
 
 import type { FormApi } from './form-api';
@@ -13,11 +13,11 @@ export type FormLayout = 'horizontal' | 'vertical';
 export type BaseFormComponentType =
   | 'DefaultButton'
   | 'PrimaryButton'
-  | 'VbenCheckbox'
-  | 'VbenInput'
-  | 'VbenInputPassword'
-  | 'VbenPinInput'
-  | 'VbenSelect'
+  | 'OpenLanCheckbox'
+  | 'OpenLanInput'
+  | 'OpenLanInputPassword'
+  | 'OpenLanPinInput'
+  | 'OpenLanSelect'
   | (Record<never, never> & string);
 
 type Breakpoints = '2xl:' | '3xl:' | '' | 'lg:' | 'md:' | 'sm:' | 'xl:';
@@ -338,13 +338,13 @@ export interface FormRenderProps<
   wrapperClass?: WrapperClassType;
 }
 
-export interface ActionButtonOptions extends VbenButtonProps {
+export interface ActionButtonOptions extends OpenLanButtonProps {
   [key: string]: any;
   content?: MaybeComputedRef<string>;
   show?: boolean;
 }
 
-export interface VbenFormProps<
+export interface OpenLanFormProps<
   T extends BaseFormComponentType = BaseFormComponentType,
 > extends Omit<
     FormRenderProps<T>,
@@ -412,12 +412,12 @@ export interface VbenFormProps<
 }
 
 export type ExtendedFormApi = FormApi & {
-  useStore: <T = NoInfer<VbenFormProps>>(
-    selector?: (state: NoInfer<VbenFormProps>) => T,
+  useStore: <T = NoInfer<OpenLanFormProps>>(
+    selector?: (state: NoInfer<OpenLanFormProps>) => T,
   ) => Readonly<Ref<T>>;
 };
 
-export interface VbenFormAdapterOptions<
+export interface OpenLanFormAdapterOptions<
   T extends BaseFormComponentType = BaseFormComponentType,
 > {
   config?: {

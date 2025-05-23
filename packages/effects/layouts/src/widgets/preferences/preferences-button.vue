@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Settings } from '@vben/icons';
 
-import { VbenIconButton } from '@vben-core/shadcn-ui';
+import { OpenLanIconButton } from '@vben-core/shadcn-ui';
 
 import Preferences from './preferences.vue';
 
@@ -13,8 +13,8 @@ function clearPreferencesAndLogout() {
 </script>
 <template>
   <Preferences @clear-preferences-and-logout="clearPreferencesAndLogout">
-    <VbenIconButton>
+    <OpenLanIconButton>
       <Settings class="text-foreground size-4" />
-    </VbenIconButton>
+    </OpenLanIconButton>
   </Preferences>
 </template>

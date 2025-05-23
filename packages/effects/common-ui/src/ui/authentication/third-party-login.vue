@@ -2,7 +2,7 @@
 import { MdiGithub, MdiGoogle, MdiQqchat, MdiWechat } from '@vben/icons';
 import { $t } from '@vben/locales';
 
-import { VbenIconButton } from '@vben-core/shadcn-ui';
+import { OpenLanIconButton } from '@vben-core/shadcn-ui';
 
 defineOptions({
   name: 'ThirdPartyLogin',
@@ -20,18 +20,18 @@ defineOptions({
     </div>
 
     <div class="mt-4 flex flex-wrap justify-center">
-      <VbenIconButton class="mb-3">
+      <OpenLanIconButton class="mb-3">
         <MdiWechat />
-      </VbenIconButton>
-      <VbenIconButton class="mb-3">
+      </OpenLanIconButton>
+      <OpenLanIconButton class="mb-3">
         <MdiQqchat />
-      </VbenIconButton>
-      <VbenIconButton class="mb-3">
+      </OpenLanIconButton>
+      <OpenLanIconButton class="mb-3">
         <MdiGithub />
-      </VbenIconButton>
-      <VbenIconButton class="mb-3">
+      </OpenLanIconButton>
+      <OpenLanIconButton class="mb-3">
         <MdiGoogle />
-      </VbenIconButton>
+      </OpenLanIconButton>
     </div>
   </div>
 </template>

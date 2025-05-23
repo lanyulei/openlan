@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
+import type { OpenLanFormSchema } from '@vben/common-ui';
 import type { Recordable } from '@vben/types';
 
 import { computed, ref } from 'vue';
@@ -12,10 +12,10 @@ defineOptions({ name: 'CodeLogin' });
 const loading = ref(false);
 const CODE_LENGTH = 6;
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): OpenLanFormSchema[] => {
   return [
     {
-      component: 'VbenInput',
+      component: 'OpenLanInput',
       componentProps: {
         placeholder: $t('authentication.mobile'),
       },
@@ -29,7 +29,7 @@ const formSchema = computed((): VbenFormSchema[] => {
         }),
     },
     {
-      component: 'VbenPinInput',
+      component: 'OpenLanPinInput',
       componentProps: {
         codeLength: CODE_LENGTH,
         createText: (countdown: number) => {

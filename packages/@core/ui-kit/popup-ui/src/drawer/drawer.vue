@@ -18,10 +18,10 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-  VbenButton,
-  VbenHelpTooltip,
-  VbenIconButton,
-  VbenLoading,
+  OpenLanButton,
+  OpenLanHelpTooltip,
+  OpenLanIconButton,
+  OpenLanLoading,
   VisuallyHidden,
 } from '@vben-core/shadcn-ui';
 import { ELEMENT_ID_MAIN_CONTENT } from '@vben-core/shared/constants';
@@ -208,9 +208,9 @@ const getForceMount = computed(() => {
             class="data-[state=open]:bg-secondary ml-[2px] cursor-pointer rounded-full opacity-80 transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none"
           >
             <slot name="close-icon">
-              <VbenIconButton>
+              <OpenLanIconButton>
                 <X class="size-4" />
-              </VbenIconButton>
+              </OpenLanIconButton>
             </slot>
           </SheetClose>
           <Separator
@@ -223,9 +223,9 @@ const getForceMount = computed(() => {
             <slot name="title">
               {{ title }}
 
-              <VbenHelpTooltip v-if="titleTooltip" trigger-class="pb-1">
+              <OpenLanHelpTooltip v-if="titleTooltip" trigger-class="pb-1">
                 {{ titleTooltip }}
-              </VbenHelpTooltip>
+              </OpenLanHelpTooltip>
             </slot>
           </SheetTitle>
           <SheetDescription v-if="description" class="mt-1 text-xs">
@@ -249,9 +249,9 @@ const getForceMount = computed(() => {
             class="data-[state=open]:bg-secondary ml-[2px] cursor-pointer rounded-full opacity-80 transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none"
           >
             <slot name="close-icon">
-              <VbenIconButton>
+              <OpenLanIconButton>
                 <X class="size-4" />
-              </VbenIconButton>
+              </OpenLanIconButton>
             </slot>
           </SheetClose>
         </div>
@@ -272,7 +272,7 @@ const getForceMount = computed(() => {
       >
         <slot></slot>
       </div>
-      <VbenLoading v-if="showLoading || submitting" spinning />
+      <OpenLanLoading v-if="showLoading || submitting" spinning />
       <SheetFooter
         v-if="showFooter"
         :class="
@@ -285,7 +285,7 @@ const getForceMount = computed(() => {
         <slot name="prepend-footer"></slot>
         <slot name="footer">
           <component
-            :is="components.DefaultButton || VbenButton"
+            :is="components.DefaultButton || OpenLanButton"
             v-if="showCancelButton"
             variant="ghost"
             :disabled="submitting"
@@ -297,7 +297,7 @@ const getForceMount = computed(() => {
           </component>
           <slot name="center-footer"></slot>
           <component
-            :is="components.PrimaryButton || VbenButton"
+            :is="components.PrimaryButton || OpenLanButton"
             v-if="showConfirmButton"
             :loading="confirmLoading || submitting"
             @click="() => drawerApi?.onConfirm()"

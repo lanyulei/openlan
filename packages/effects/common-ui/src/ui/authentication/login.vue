@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Recordable } from '@vben/types';
 
-import type { VbenFormSchema } from '@vben-core/form-ui';
+import type { OpenLanFormSchema } from '@vben-core/form-ui';
 
 import type { AuthenticationProps } from './types';
 
@@ -10,14 +10,14 @@ import { useRouter } from 'vue-router';
 
 import { $t } from '@vben/locales';
 
-import { useVbenForm } from '@vben-core/form-ui';
-import { VbenButton, VbenCheckbox } from '@vben-core/shadcn-ui';
+import { useOpenLanForm } from '@vben-core/form-ui';
+import { OpenLanButton, OpenLanCheckbox } from '@vben-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 import ThirdPartyLogin from './third-party-login.vue';
 
 interface Props extends AuthenticationProps {
-  formSchema?: VbenFormSchema[];
+  formSchema?: OpenLanFormSchema[];
 }
 
 defineOptions({
@@ -46,7 +46,7 @@ const emit = defineEmits<{
   submit: [Recordable<any>];
 }>();
 
-const [Form, formApi] = useVbenForm(
+const [Form, formApi] = useOpenLanForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -115,24 +115,24 @@ defineExpose({
       class="mb-6 flex justify-between"
     >
       <div class="flex-center">
-        <VbenCheckbox
+        <OpenLanCheckbox
           v-if="showRememberMe"
           v-model:checked="rememberMe"
           name="rememberMe"
         >
           {{ $t('authentication.rememberMe') }}
-        </VbenCheckbox>
+        </OpenLanCheckbox>
       </div>
 
       <span
         v-if="showForgetPassword"
-        class="vben-link text-sm font-normal"
+        class="openlan-link text-sm font-normal"
         @click="handleGo(forgetPasswordPath)"
       >
         {{ $t('authentication.forgetPassword') }}
       </span>
     </div>
-    <VbenButton
+    <OpenLanButton
       :class="{
         'cursor-wait': loading,
       }"
@@ -142,28 +142,28 @@ defineExpose({
       @click="handleSubmit"
     >
       {{ submitButtonText || $t('common.login') }}
-    </VbenButton>
+    </OpenLanButton>
 
     <div
       v-if="showCodeLogin || showQrcodeLogin"
       class="mb-2 mt-4 flex items-center justify-between"
     >
-      <VbenButton
+      <OpenLanButton
         v-if="showCodeLogin"
         class="w-1/2"
         variant="outline"
         @click="handleGo(codeLoginPath)"
       >
         {{ $t('authentication.mobileLogin') }}
-      </VbenButton>
-      <VbenButton
+      </OpenLanButton>
+      <OpenLanButton
         v-if="showQrcodeLogin"
         class="ml-4 w-1/2"
         variant="outline"
         @click="handleGo(qrCodeLoginPath)"
       >
         {{ $t('authentication.qrcodeLogin') }}
-      </VbenButton>
+      </OpenLanButton>
     </div>
 
     <!-- 第三方登录 -->
@@ -175,7 +175,7 @@ defineExpose({
       <div v-if="showRegister" class="mt-3 text-center text-sm">
         {{ $t('authentication.accountTip') }}
         <span
-          class="vben-link text-sm font-normal"
+          class="openlan-link text-sm font-normal"
           @click="handleGo(registerPath)"
         >
           {{ $t('authentication.createAccount') }}

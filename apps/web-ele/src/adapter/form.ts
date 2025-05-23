@@ -1,14 +1,14 @@
 import type {
-  VbenFormSchema as FormSchema,
-  VbenFormProps,
+  OpenLanFormSchema as FormSchema,
+  OpenLanFormProps,
 } from '@vben/common-ui';
 
 import type { ComponentType } from './component';
 
-import { setupVbenForm, useVbenForm as useForm, z } from '@vben/common-ui';
+import { setupOpenLanForm, useOpenLanForm as useForm, z } from '@vben/common-ui';
 import { $t } from '@vben/locales';
 
-setupVbenForm<ComponentType>({
+setupOpenLanForm<ComponentType>({
   config: {
     modelPropNameMap: {
       Upload: 'fileList',
@@ -31,9 +31,9 @@ setupVbenForm<ComponentType>({
   },
 });
 
-const useVbenForm = useForm<ComponentType>;
+const useOpenLanForm = useForm<ComponentType>;
 
-export { useVbenForm, z };
+export { useOpenLanForm, z };
 
-export type VbenFormSchema = FormSchema<ComponentType>;
-export type { VbenFormProps };
+export type OpenLanFormSchema = FormSchema<ComponentType>;
+export type { OpenLanFormProps };

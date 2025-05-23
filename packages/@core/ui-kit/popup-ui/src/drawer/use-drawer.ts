@@ -18,7 +18,7 @@ import {
 import { useStore } from '@vben-core/shared/store';
 
 import { DrawerApi } from './drawer-api';
-import VbenDrawer from './drawer.vue';
+import OpenLanDrawer from './drawer.vue';
 
 const USER_DRAWER_INJECT_KEY = Symbol('VBEN_DRAWER_INJECT');
 
@@ -28,7 +28,7 @@ export function setDefaultDrawerProps(props: Partial<DrawerProps>) {
   Object.assign(DEFAULT_DRAWER_PROPS, props);
 }
 
-export function useVbenDrawer<
+export function useOpenLanDrawer<
   TParentDrawerProps extends DrawerProps = DrawerProps,
 >(options: DrawerApiOptions = {}) {
   // Drawer一般会抽离出来，所以如果有传入 connectedComponent，则表示为外部调用，与内部组件进行连接
@@ -67,7 +67,7 @@ export function useVbenDrawer<
       },
       // eslint-disable-next-line vue/one-component-per-file
       {
-        name: 'VbenParentDrawer',
+        name: 'OpenLanParentDrawer',
         inheritAttrs: false,
       },
     );
@@ -113,11 +113,11 @@ export function useVbenDrawer<
   const Drawer = defineComponent(
     (props: DrawerProps, { attrs, slots }) => {
       return () =>
-        h(VbenDrawer, { ...props, ...attrs, drawerApi: extendedApi }, slots);
+        h(OpenLanDrawer, { ...props, ...attrs, drawerApi: extendedApi }, slots);
     },
     // eslint-disable-next-line vue/one-component-per-file
     {
-      name: 'VbenDrawer',
+      name: 'OpenLanDrawer',
       inheritAttrs: false,
     },
   );
@@ -141,9 +141,9 @@ async function checkProps(api: ExtendedDrawerApi, attrs: Record<string, any>) {
 
   for (const attr of Object.keys(attrs)) {
     if (stateKeys.has(attr) && !['class'].includes(attr)) {
-      // connectedComponent存在时，不要传入Drawer的props，会造成复杂度提升，如果你需要修改Drawer的props，请使用 useVbenDrawer 或者api
+      // connectedComponent存在时，不要传入Drawer的props，会造成复杂度提升，如果你需要修改Drawer的props，请使用 useOpenLanDrawer 或者api
       console.warn(
-        `[Vben Drawer]: When 'connectedComponent' exists, do not set props or slots '${attr}', which will increase complexity. If you need to modify the props of Drawer, please use useVbenDrawer or api.`,
+        `[OpenLan Drawer]: When 'connectedComponent' exists, do not set props or slots '${attr}', which will increase complexity. If you need to modify the props of Drawer, please use useOpenLanDrawer or api.`,
       );
     }
   }

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
+import type { OpenLanFormSchema } from '@vben/common-ui';
 import type { Recordable } from '@vben/types';
 
 import { computed, ref } from 'vue';
@@ -11,10 +11,10 @@ defineOptions({ name: 'ForgetPassword' });
 
 const loading = ref(false);
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): OpenLanFormSchema[] => {
   return [
     {
-      component: 'VbenInput',
+      component: 'OpenLanInput',
       componentProps: {
         placeholder: 'example@example.com',
       },
