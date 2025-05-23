@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { OpenLanFormSchema } from '@vben/common-ui';
-import type { BasicOption } from '@vben/types';
 
 import { computed, markRaw } from 'vue';
 
@@ -13,57 +12,12 @@ defineOptions({ name: 'Login' });
 
 const authStore = useAuthStore();
 
-const MOCK_USER_OPTIONS: BasicOption[] = [
-  {
-    label: 'Super',
-    value: 'openlan',
-  },
-  {
-    label: 'Admin',
-    value: 'admin',
-  },
-  {
-    label: 'User',
-    value: 'jack',
-  },
-];
-
 const formSchema = computed((): OpenLanFormSchema[] => {
   return [
-    {
-      component: 'OpenLanSelect',
-      componentProps: {
-        options: MOCK_USER_OPTIONS,
-        placeholder: $t('authentication.selectAccount'),
-      },
-      fieldName: 'selectAccount',
-      label: $t('authentication.selectAccount'),
-      rules: z
-        .string()
-        .min(1, { message: $t('authentication.selectAccount') })
-        .optional()
-        .default('openlan'),
-    },
     {
       component: 'OpenLanInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
-      },
-      dependencies: {
-        trigger(values, form) {
-          if (values.selectAccount) {
-            const findUser = MOCK_USER_OPTIONS.find(
-              (item) => item.value === values.selectAccount,
-            );
-            if (findUser) {
-              form.setValues({
-                password: '123456',
-                username: findUser.value,
-              });
-            }
-          }
-        },
-        triggerFields: ['selectAccount'],
       },
       fieldName: 'username',
       label: $t('authentication.username'),
@@ -91,6 +45,12 @@ const formSchema = computed((): OpenLanFormSchema[] => {
 
 <template>
   <AuthenticationLogin
+    :show-forget-password="false"
+    :show-qrcode-login="false"
+    :show-register="false"
+    :show-remember-me="false"
+    :show-third-party-login="false"
+    :show-code-login="false"
     :form-schema="formSchema"
     :loading="authStore.loginLoading"
     @submit="authStore.authLogin"
