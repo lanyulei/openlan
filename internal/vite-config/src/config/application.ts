@@ -43,9 +43,6 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       nitroMock: !isBuild,
       nitroMockOptions: {},
       print: !isBuild,
-      printInfoMap: {
-        'OpenLan Admin Docs': 'https://doc.openlan.pro',
-      },
       pwa: true,
       pwaOptions: getDefaultPwaOptions(appTitle),
       vxeTableLazyImport: true,
